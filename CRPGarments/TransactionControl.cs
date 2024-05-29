@@ -23,6 +23,7 @@ namespace CRPGarments
         private void btn_addTransaction_Click(object sender, EventArgs e)
         {
             CommonMethod.showControl(addTransactionControl, ContentPanel);
+            displayData("");
         }
 
         private void txt_search_TextChanged(object sender, EventArgs e)

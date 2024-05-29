@@ -33,6 +33,7 @@ namespace CRPGarments
         {
             SessionStrings.processType = "Add Products";
             CommonMethod.showControl(addProductControl, ContentPanel);
+            displayData("");
         }
 
         private void txt_search_TextChanged(object sender, EventArgs e)
