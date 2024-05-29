@@ -35,11 +35,6 @@
             this.txt_search = new System.Windows.Forms.TextBox();
             this.lbl_searchText = new System.Windows.Forms.Label();
             this.retailersDataGridView = new System.Windows.Forms.DataGridView();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btn_filter = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.RetailId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContactNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +45,11 @@
             this.CreatedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cmb_status = new System.Windows.Forms.ComboBox();
+            this.cmb_category = new System.Windows.Forms.ComboBox();
+            this.btn_filter = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.ContentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.retailersDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -60,8 +60,8 @@
             this.ContentPanel.Controls.Add(this.txt_search);
             this.ContentPanel.Controls.Add(this.lbl_searchText);
             this.ContentPanel.Controls.Add(this.retailersDataGridView);
-            this.ContentPanel.Controls.Add(this.comboBox2);
-            this.ContentPanel.Controls.Add(this.comboBox1);
+            this.ContentPanel.Controls.Add(this.cmb_status);
+            this.ContentPanel.Controls.Add(this.cmb_category);
             this.ContentPanel.Controls.Add(this.btn_filter);
             this.ContentPanel.Controls.Add(this.label3);
             this.ContentPanel.Controls.Add(this.label2);
@@ -142,56 +142,6 @@
             this.retailersDataGridView.TabIndex = 58;
             this.retailersDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.retailersDataGridView_CellContentClick);
             // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(332, 15);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(158, 24);
-            this.comboBox2.TabIndex = 66;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(118, 15);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 24);
-            this.comboBox1.TabIndex = 65;
-            // 
-            // btn_filter
-            // 
-            this.btn_filter.BackgroundImage = global::CRPGarments.Properties.Resources.search;
-            this.btn_filter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_filter.Location = new System.Drawing.Point(496, 11);
-            this.btn_filter.Name = "btn_filter";
-            this.btn_filter.Size = new System.Drawing.Size(30, 30);
-            this.btn_filter.TabIndex = 64;
-            this.btn_filter.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(286, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 15);
-            this.label3.TabIndex = 63;
-            this.label3.Text = "Status:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 15);
-            this.label2.TabIndex = 62;
-            this.label2.Text = "Filter by: Category";
-            // 
             // RetailId
             // 
             this.RetailId.HeaderText = "Retail Id";
@@ -253,6 +203,57 @@
             this.Delete.Name = "Delete";
             this.Delete.Width = 40;
             // 
+            // cmb_status
+            // 
+            this.cmb_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_status.FormattingEnabled = true;
+            this.cmb_status.Location = new System.Drawing.Point(332, 15);
+            this.cmb_status.Name = "cmb_status";
+            this.cmb_status.Size = new System.Drawing.Size(158, 24);
+            this.cmb_status.TabIndex = 66;
+            // 
+            // cmb_category
+            // 
+            this.cmb_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_category.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_category.FormattingEnabled = true;
+            this.cmb_category.Location = new System.Drawing.Point(118, 15);
+            this.cmb_category.Name = "cmb_category";
+            this.cmb_category.Size = new System.Drawing.Size(158, 24);
+            this.cmb_category.TabIndex = 65;
+            // 
+            // btn_filter
+            // 
+            this.btn_filter.BackgroundImage = global::CRPGarments.Properties.Resources.search;
+            this.btn_filter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_filter.Location = new System.Drawing.Point(496, 11);
+            this.btn_filter.Name = "btn_filter";
+            this.btn_filter.Size = new System.Drawing.Size(30, 30);
+            this.btn_filter.TabIndex = 64;
+            this.btn_filter.UseVisualStyleBackColor = true;
+            this.btn_filter.Click += new System.EventHandler(this.btn_filter_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(286, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 15);
+            this.label3.TabIndex = 63;
+            this.label3.Text = "Status:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(14, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 15);
+            this.label2.TabIndex = 62;
+            this.label2.Text = "Filter by: Category";
+            // 
             // RetailersControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,8 +276,8 @@
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Label lbl_searchText;
         public System.Windows.Forms.DataGridView retailersDataGridView;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_status;
+        private System.Windows.Forms.ComboBox cmb_category;
         private System.Windows.Forms.Button btn_filter;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

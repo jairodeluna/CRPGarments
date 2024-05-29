@@ -30,12 +30,19 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_gallery1 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_gallery2 = new System.Windows.Forms.Button();
+            this.btn_gallery3 = new System.Windows.Forms.Button();
+            this.btn_gallery4 = new System.Windows.Forms.Button();
+            this.btn_gallery5 = new System.Windows.Forms.Button();
+            this.btn_gallery6 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -63,6 +70,18 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Lumina Phase 1 San Vicente City of Sto. Tomas, Batangas";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btn_gallery1
+            // 
+            this.btn_gallery1.BackColor = System.Drawing.Color.Transparent;
+            this.btn_gallery1.BackgroundImage = global::CRPGarments.Properties.Resources.loading_arrow;
+            this.btn_gallery1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_gallery1.Location = new System.Drawing.Point(237, 114);
+            this.btn_gallery1.Name = "btn_gallery1";
+            this.btn_gallery1.Size = new System.Drawing.Size(29, 29);
+            this.btn_gallery1.TabIndex = 9;
+            this.btn_gallery1.UseVisualStyleBackColor = false;
+            this.btn_gallery1.Click += new System.EventHandler(this.btn_gallery1_Click);
             // 
             // pictureBox4
             // 
@@ -130,11 +149,81 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // btn_gallery2
+            // 
+            this.btn_gallery2.BackColor = System.Drawing.Color.Transparent;
+            this.btn_gallery2.BackgroundImage = global::CRPGarments.Properties.Resources.loading_arrow;
+            this.btn_gallery2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_gallery2.Location = new System.Drawing.Point(568, 114);
+            this.btn_gallery2.Name = "btn_gallery2";
+            this.btn_gallery2.Size = new System.Drawing.Size(29, 29);
+            this.btn_gallery2.TabIndex = 10;
+            this.btn_gallery2.UseVisualStyleBackColor = false;
+            this.btn_gallery2.Click += new System.EventHandler(this.btn_gallery2_Click);
+            // 
+            // btn_gallery3
+            // 
+            this.btn_gallery3.BackColor = System.Drawing.Color.Transparent;
+            this.btn_gallery3.BackgroundImage = global::CRPGarments.Properties.Resources.loading_arrow;
+            this.btn_gallery3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_gallery3.Location = new System.Drawing.Point(875, 114);
+            this.btn_gallery3.Name = "btn_gallery3";
+            this.btn_gallery3.Size = new System.Drawing.Size(29, 29);
+            this.btn_gallery3.TabIndex = 11;
+            this.btn_gallery3.UseVisualStyleBackColor = false;
+            this.btn_gallery3.Click += new System.EventHandler(this.btn_gallery3_Click);
+            // 
+            // btn_gallery4
+            // 
+            this.btn_gallery4.BackColor = System.Drawing.Color.Transparent;
+            this.btn_gallery4.BackgroundImage = global::CRPGarments.Properties.Resources.loading_arrow;
+            this.btn_gallery4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_gallery4.Location = new System.Drawing.Point(875, 338);
+            this.btn_gallery4.Name = "btn_gallery4";
+            this.btn_gallery4.Size = new System.Drawing.Size(29, 29);
+            this.btn_gallery4.TabIndex = 14;
+            this.btn_gallery4.UseVisualStyleBackColor = false;
+            this.btn_gallery4.Click += new System.EventHandler(this.btn_gallery4_Click);
+            // 
+            // btn_gallery5
+            // 
+            this.btn_gallery5.BackColor = System.Drawing.Color.Transparent;
+            this.btn_gallery5.BackgroundImage = global::CRPGarments.Properties.Resources.loading_arrow;
+            this.btn_gallery5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_gallery5.Location = new System.Drawing.Point(568, 338);
+            this.btn_gallery5.Name = "btn_gallery5";
+            this.btn_gallery5.Size = new System.Drawing.Size(29, 29);
+            this.btn_gallery5.TabIndex = 13;
+            this.btn_gallery5.UseVisualStyleBackColor = false;
+            this.btn_gallery5.Click += new System.EventHandler(this.btn_gallery5_Click);
+            // 
+            // btn_gallery6
+            // 
+            this.btn_gallery6.BackColor = System.Drawing.Color.Transparent;
+            this.btn_gallery6.BackgroundImage = global::CRPGarments.Properties.Resources.loading_arrow;
+            this.btn_gallery6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_gallery6.Location = new System.Drawing.Point(237, 338);
+            this.btn_gallery6.Name = "btn_gallery6";
+            this.btn_gallery6.Size = new System.Drawing.Size(29, 29);
+            this.btn_gallery6.TabIndex = 12;
+            this.btn_gallery6.UseVisualStyleBackColor = false;
+            this.btn_gallery6.Click += new System.EventHandler(this.btn_gallery6_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // HomeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.btn_gallery4);
+            this.Controls.Add(this.btn_gallery5);
+            this.Controls.Add(this.btn_gallery6);
+            this.Controls.Add(this.btn_gallery3);
+            this.Controls.Add(this.btn_gallery2);
+            this.Controls.Add(this.btn_gallery1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox6);
@@ -145,6 +234,7 @@
             this.Controls.Add(this.label1);
             this.Name = "HomeControl";
             this.Size = new System.Drawing.Size(960, 577);
+            this.Load += new System.EventHandler(this.HomeControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -164,5 +254,12 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Button btn_gallery1;
+        private System.Windows.Forms.Button btn_gallery2;
+        private System.Windows.Forms.Button btn_gallery3;
+        private System.Windows.Forms.Button btn_gallery4;
+        private System.Windows.Forms.Button btn_gallery5;
+        private System.Windows.Forms.Button btn_gallery6;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

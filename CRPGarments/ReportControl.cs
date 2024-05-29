@@ -30,11 +30,11 @@ namespace CRPGarments
             string query = null;
             if (search == "")
             {
-                query = "SELECT TransactionNo, ImagePath, ProductName, Size, Quantity, Amount, Status, Category, ModifiedBy, ModifiedDate, CreatedBy, CreatedDate FROM OverallTransaction ORDER BY CreatedDate desc";
+                query = "SELECT TransactionNo, ImagePath, ProductName, Size, Quantity,  Amount, Status, Category, ModifiedBy, ModifiedDate, CreatedBy, CreatedDate FROM OverallTransaction ORDER BY CreatedDate desc";
             }
             else
             {
-                query = "SELECT TransactionNo, ImagePath, ProductName, Size, Quantity, Amount, Status, Category, ModifiedBy, ModifiedDate, CreatedBy, CreatedDate FROM Products WHERE TransactionNo LIKE '%" + search + "%' OR ProductName LIKE '%" + search + "%' OR Size LIKE '%" + search + "%' OR Category LIKE '%" + search + "%' OR ModifiedBy LIKE '%" + search + "%' OR ModifiedDate LIKE '%" + search + "%' OR CreatedBy LIKE '%" + search + "%' OR CreatedDate LIKE '%" + search + "%' ORDER BY CreatedDate desc";
+                query = "SELECT TransactionNo, ImagePath, ProductName, Size, Quantity, Amount, Status, Category, ModifiedBy, ModifiedDate, CreatedBy, CreatedDate FROM OverallTransaction WHERE TransactionNo LIKE '%" + search + "%' OR ProductName LIKE '%" + search + "%' OR Size LIKE '%" + search + "%' OR Category LIKE '%" + search + "%' OR ModifiedBy LIKE '%" + search + "%' OR ModifiedDate LIKE '%" + search + "%' OR CreatedBy LIKE '%" + search + "%' OR CreatedDate LIKE '%" + search + "%' ORDER BY CreatedDate desc";
             }
             DataTable dataTable = con.ExecuteDataTable(query);
             con.Close();
