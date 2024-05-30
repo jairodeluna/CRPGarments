@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.lbl_searchText = new System.Windows.Forms.Label();
             this.dateToTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -37,7 +37,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_filter = new System.Windows.Forms.Button();
-            this.lbl_totalSalesAmountValue = new System.Windows.Forms.Label();
             this.transactionDataGridView = new System.Windows.Forms.DataGridView();
             this.TransactionNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Image = new System.Windows.Forms.DataGridViewImageColumn();
@@ -49,6 +48,7 @@
             this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ModifiedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreatedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_totalSalesAmountValue = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.transactionDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,26 +122,17 @@
             this.btn_filter.UseVisualStyleBackColor = true;
             this.btn_filter.Click += new System.EventHandler(this.btn_filter_Click);
             // 
-            // lbl_totalSalesAmountValue
-            // 
-            this.lbl_totalSalesAmountValue.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totalSalesAmountValue.Location = new System.Drawing.Point(499, 540);
-            this.lbl_totalSalesAmountValue.Name = "lbl_totalSalesAmountValue";
-            this.lbl_totalSalesAmountValue.Size = new System.Drawing.Size(450, 23);
-            this.lbl_totalSalesAmountValue.TabIndex = 51;
-            this.lbl_totalSalesAmountValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // transactionDataGridView
             // 
             this.transactionDataGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.transactionDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.transactionDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.transactionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.transactionDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TransactionNo,
@@ -154,18 +145,18 @@
             this.Category,
             this.ModifiedBy,
             this.CreatedBy});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.transactionDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.transactionDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.transactionDataGridView.Location = new System.Drawing.Point(11, 53);
             this.transactionDataGridView.Name = "transactionDataGridView";
             this.transactionDataGridView.RowHeadersVisible = false;
-            this.transactionDataGridView.Size = new System.Drawing.Size(938, 510);
+            this.transactionDataGridView.Size = new System.Drawing.Size(938, 484);
             this.transactionDataGridView.TabIndex = 69;
             // 
             // TransactionNo
@@ -228,6 +219,15 @@
             this.CreatedBy.Name = "CreatedBy";
             this.CreatedBy.Width = 80;
             // 
+            // lbl_totalSalesAmountValue
+            // 
+            this.lbl_totalSalesAmountValue.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalSalesAmountValue.Location = new System.Drawing.Point(498, 543);
+            this.lbl_totalSalesAmountValue.Name = "lbl_totalSalesAmountValue";
+            this.lbl_totalSalesAmountValue.Size = new System.Drawing.Size(450, 23);
+            this.lbl_totalSalesAmountValue.TabIndex = 51;
+            this.lbl_totalSalesAmountValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // ReportControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,7 +258,6 @@
         private System.Windows.Forms.DateTimePicker dateFromTimePicker;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lbl_totalSalesAmountValue;
         public System.Windows.Forms.DataGridView transactionDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn TransactionNo;
         private System.Windows.Forms.DataGridViewImageColumn Image;
@@ -270,5 +269,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Category;
         private System.Windows.Forms.DataGridViewTextBoxColumn ModifiedBy;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatedBy;
+        private System.Windows.Forms.Label lbl_totalSalesAmountValue;
     }
 }

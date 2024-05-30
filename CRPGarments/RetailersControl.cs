@@ -38,11 +38,11 @@ namespace CRPGarments
             string query = null;
             if (search == "")
             {
-                query = "SELECT RetailerNo, FirstName + '' + LastName as FullName, ContactNumber, Address, Category, Status, ModifiedBy, ModifiedDate, CreatedBy, CreatedDate FROM RetailerInformation ORDER BY CreatedDate desc";
+                query = "SELECT RetailerNo, FirstName + ' ' + LastName as FullName, ContactNumber, Address, Category, Status, ModifiedBy, ModifiedDate, CreatedBy, CreatedDate FROM RetailerInformation ORDER BY CreatedDate desc";
             }
             else
             {
-                query = "SELECT RetailerNo, FirstName + '' + LastName as FullName, ContactNumber, Address, Category, Status, ModifiedBy, ModifiedDate, CreatedBy, CreatedDate FROM RetailerInformation WHERE RetailerNo LIKE '%" + search + "%' OR FirstName LIKE '%" + search + "%' OR LastName LIKE '%" + search + "%' OR Category LIKE '%" + search + "%' OR Status LIKE '%" + search + "%' OR Address LIKE '%" + search + "%' OR ModifiedBy LIKE '%" + search + "%' OR ModifiedDate LIKE '%" + search + "%' OR CreatedBy LIKE '%" + search + "%' OR CreatedDate LIKE '%" + search + "%' ORDER BY CreatedDate desc";
+                query = "SELECT RetailerNo, FirstName + ' ' + LastName as FullName, ContactNumber, Address, Category, Status, ModifiedBy, ModifiedDate, CreatedBy, CreatedDate FROM RetailerInformation WHERE RetailerNo LIKE '%" + search + "%' OR FirstName LIKE '%" + search + "%' OR LastName LIKE '%" + search + "%' OR Category LIKE '%" + search + "%' OR Status LIKE '%" + search + "%' OR Address LIKE '%" + search + "%' OR ModifiedBy LIKE '%" + search + "%' OR ModifiedDate LIKE '%" + search + "%' OR CreatedBy LIKE '%" + search + "%' OR CreatedDate LIKE '%" + search + "%' ORDER BY CreatedDate desc";
             }
             DataTable dataTable = con.ExecuteDataTable(query);
             con.Close();

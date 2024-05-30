@@ -34,38 +34,38 @@ namespace CRPGarments
         {
             openFileDialog();
             updateGallery(2);
-            pictureBox1.ImageLocation = imgLoc;
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.ImageLocation = imgLoc;
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
         }
         private void btn_gallery3_Click(object sender, EventArgs e)
         {
             openFileDialog();
             updateGallery(3);
-            pictureBox1.ImageLocation = imgLoc;
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.ImageLocation = imgLoc;
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
         }
         private void btn_gallery6_Click(object sender, EventArgs e)
         {
             openFileDialog();
             updateGallery(6);
-            pictureBox1.ImageLocation = imgLoc;
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.ImageLocation = imgLoc;
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void btn_gallery5_Click(object sender, EventArgs e)
         {
             openFileDialog();
             updateGallery(5);
-            pictureBox1.ImageLocation = imgLoc;
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.ImageLocation = imgLoc;
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void btn_gallery4_Click(object sender, EventArgs e)
         {
             openFileDialog();
             updateGallery(4);
-            pictureBox1.ImageLocation = imgLoc;
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.ImageLocation = imgLoc;
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void updateGallery(int galleryId)
