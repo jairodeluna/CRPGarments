@@ -33,12 +33,16 @@ namespace CRPGarments
                 SqlDataReader sdr = con.ExecuteReader(query);
                 if (sdr.Read())
                 {
+                    cmb_category.Enabled = false;
+                    cmb_size.Enabled = false;
                     filePath = sdr.GetString(1);
                     pic_item.ImageLocation = filePath;
                     pic_item.SizeMode = PictureBoxSizeMode.StretchImage;
                     cmb_productName.SelectedItem = sdr.GetString(2);
                     loadCategory();
                     loadSizes();
+                    lbl_noOfStocks.Visible = true;
+                    lbl_noOfStocks.Text = "No of Stocks: " + loadStocks();
                     cmb_size.SelectedItem = sdr.GetString(3);
                     txt_quantity.Text = sdr.GetInt32(4).ToString();
                     loadAmount();
@@ -60,6 +64,8 @@ namespace CRPGarments
                 txt_quantity.Text = "";
                 txt_status.Text = "";
                 txt_amount.Text = "";
+                cmb_category.Enabled = false;
+                cmb_size.Enabled = false;
             }
         }
         private void btn_saveTransaction_Click(object sender, EventArgs e)
@@ -102,7 +108,7 @@ namespace CRPGarments
                     }
                     else
                     {
-                        MessageBox.Show("Invalid quantity.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Quantity exceeds to the current stocks.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     con.Close();
                 }
@@ -124,7 +130,7 @@ namespace CRPGarments
         private void cmb_productName_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadCategory();
-            loadSizes();
+            cmb_category.Enabled = true;
         }
 
         private void loadProducts()
@@ -155,7 +161,7 @@ namespace CRPGarments
         private void loadSizes()
         {
             con.Open();
-            string query = "select DISTINCT Size from Products where ProductName = '" + cmb_productName.SelectedItem + "'";
+            string query = "select DISTINCT Size from Products where ProductName = '" + cmb_productName.SelectedItem + "' AND Category = '"+cmb_category.SelectedItem+"'";
             SqlDataReader sdr = con.ExecuteReader(query);
             while (sdr.Read())
             {
@@ -163,6 +169,30 @@ namespace CRPGarments
             }
             sdr.Close();
             con.Close();
+        }
+
+        private int loadStocks()
+        {
+            int stocksLeft = 0;
+            con.Open();
+            string query = "select NoOfStocks from Products where ProductName = '" + cmb_productName.SelectedItem + "' AND Category = '"+cmb_category.SelectedItem+"' AND Size = '"+cmb_size.SelectedItem+"'";
+            SqlDataReader sdr = con.ExecuteReader(query);
+            if (sdr.Read())
+            {
+                int noOfStocks = sdr.GetInt32(0);
+                int transactionQuantity = 0;
+                sdr.Close();
+                string query2 = "select Quantity from OverallTransaction where ProductName = '" + cmb_productName.SelectedItem + "' AND Category = '" + cmb_category.SelectedItem + "' AND Size = '" + cmb_size.SelectedItem + "'";
+                SqlDataReader sdr2 = con.ExecuteReader(query2);
+                while (sdr2.Read())
+                {
+                    transactionQuantity = transactionQuantity + sdr2.GetInt32(0);
+                }
+                stocksLeft = noOfStocks - transactionQuantity;
+                sdr2.Close();
+            }
+            con.Close();
+            return stocksLeft;
         }
 
         private void loadAmount()
@@ -177,8 +207,6 @@ namespace CRPGarments
                     long price = sdr.GetInt64(0);
                     txt_amount.Text = (Convert.ToInt64(txt_quantity.Text) * price).ToString();
                     filePath = sdr.GetString(1);
-                    lbl_noOfStocks.Visible = true;
-                    lbl_noOfStocks.Text = "No of Stocks: " + sdr.GetInt32(2).ToString();
                     pic_item.ImageLocation = filePath;
                     pic_item.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
@@ -190,11 +218,29 @@ namespace CRPGarments
         private void cmb_size_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadAmount();
+            lbl_noOfStocks.Visible = true;
+            lbl_noOfStocks.Text = "No of Stocks: " + loadStocks();
         }
 
         private void txt_quantity_TextChanged(object sender, EventArgs e)
         {
             loadAmount();
+        }
+
+        private void cmb_category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadSizes();
+            cmb_size.Enabled = true;
+        }
+
+        private void txt_quantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txt_amount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

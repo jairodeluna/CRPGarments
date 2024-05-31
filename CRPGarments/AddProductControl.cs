@@ -153,5 +153,15 @@ namespace CRPGarments
             cmb_sizes.Items.Add("Double XL");
             cmb_sizes.Items.Add("Triple XL");
         }
+
+        private void txt_noOfStocks_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txt_price_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }

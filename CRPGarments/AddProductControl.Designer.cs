@@ -163,6 +163,7 @@
             this.txt_noOfStocks.Name = "txt_noOfStocks";
             this.txt_noOfStocks.Size = new System.Drawing.Size(99, 31);
             this.txt_noOfStocks.TabIndex = 4;
+            this.txt_noOfStocks.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_noOfStocks_KeyPress);
             // 
             // label2
             // 
@@ -245,6 +246,7 @@
             this.txt_price.Name = "txt_price";
             this.txt_price.Size = new System.Drawing.Size(223, 53);
             this.txt_price.TabIndex = 6;
+            this.txt_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_price_KeyPress);
             // 
             // txt_productName
             // 

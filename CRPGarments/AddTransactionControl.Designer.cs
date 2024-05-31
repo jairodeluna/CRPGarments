@@ -105,6 +105,7 @@
             this.txt_quantity.Size = new System.Drawing.Size(223, 31);
             this.txt_quantity.TabIndex = 4;
             this.txt_quantity.TextChanged += new System.EventHandler(this.txt_quantity_TextChanged);
+            this.txt_quantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_quantity_KeyPress);
             // 
             // cmb_size
             // 
@@ -126,6 +127,7 @@
             this.cmb_category.Name = "cmb_category";
             this.cmb_category.Size = new System.Drawing.Size(522, 33);
             this.cmb_category.TabIndex = 2;
+            this.cmb_category.SelectedIndexChanged += new System.EventHandler(this.cmb_category_SelectedIndexChanged);
             // 
             // cmb_productName
             // 
@@ -252,6 +254,7 @@
             this.txt_amount.Name = "txt_amount";
             this.txt_amount.Size = new System.Drawing.Size(223, 53);
             this.txt_amount.TabIndex = 88;
+            this.txt_amount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_amount_KeyPress);
             // 
             // lbl_pageTitle
             // 
